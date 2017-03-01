@@ -1,0 +1,8 @@
+sudo: false
+language: ruby
+rvm:
+- 2.3.0
+script:
+- bundle install
+- bundle exec rake test
+- bundle exec rake spec
