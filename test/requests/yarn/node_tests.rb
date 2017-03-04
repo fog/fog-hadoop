@@ -1,6 +1,6 @@
 require "test_helper"
 
-describe "Fog::Yarn[:hadoop] | node requests" do
+describe "Fog::Yarn[:Hadoop] | node requests" do
   before do
     @node_format = {
       "rack"                  => String,
@@ -18,7 +18,7 @@ describe "Fog::Yarn[:hadoop] | node requests" do
       "availableVirtualCores" => Integer
     }
 
-    @yarn = Fog::Yarn[:hadoop]
+    @yarn = Fog::Yarn[:Hadoop]
  end
  describe "success" do
    it "#get_node(1)" do
