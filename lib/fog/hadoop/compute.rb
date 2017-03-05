@@ -1,6 +1,7 @@
 module Fog
   module Compute
     class Hadoop < Fog::Service
+      requires     :hadoop_compute_api_url
 
       recognizes   :compute_api_url
 
@@ -13,9 +14,9 @@ module Fog
 
         def initialize(options = {})
 
-          @hadoop_api_url = options[:hadoop_api_url] || 'https://localhost:8088/ws/v1/cluster'
+          @compute_api_url = options[:hadoop_compute_api_url] || 'https://localhost:8088/'
 
-          @connection = Fog::Core::Connection.new(@hadoop_api_url)
+          @connection = Fog::Core::Connection.new(@compute_api_url)
         end
       end
 

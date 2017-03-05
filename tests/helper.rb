@@ -6,7 +6,7 @@ require 'fog/test_helpers'
 require 'fog/hadoop'
 
 if ENV['CI']
-  Fog.credentials[:service_api_url]        = 'http://localhost:8088'
+  Fog.credentials[:hadoop_compute_api_url]        = 'http://localhost:8088'
 end
 
 def hadoop_compute_service
