@@ -42,16 +42,18 @@ Gem::Specification.new do |spec|
 
   spec.add_dependency 'fog-core',  '>= 1.40'
   spec.add_dependency 'fog-json',  '>= 1.0'
-  #spec.add_dependency 'ipaddress', '>= 0.8'
 
-  spec.add_development_dependency 'bundler', '~> 1.6'
-  spec.add_development_dependency "mime-types"
-  spec.add_development_dependency "mime-types-data"
-  spec.add_development_dependency 'rake',    '~> 10.0'
-  spec.add_development_dependency 'rubocop'
-  spec.add_development_dependency 'rubyzip', '~> 0.9.9'
-  spec.add_development_dependency 'shindo',  '~> 0.3'
-  spec.add_development_dependency 'minitest'
-  spec.add_development_dependency 'vcr'
-  spec.add_development_dependency 'webmock',  '~> 1.24.6'
+  spec.add_development_dependency "bundler", "~> 1.5"
+  ## List your development dependencies here. Development dependencies are
+  ## those that are only needed during development
+  spec.add_development_dependency('minitest')
+  spec.add_development_dependency('rake')
+  spec.add_development_dependency('rbvmomi')
+  spec.add_development_dependency('yard')
+  spec.add_development_dependency('thor')
+  spec.add_development_dependency('rbovirt', '0.0.24')
+  spec.add_development_dependency('shindo', '~> 0.3.4')
+  spec.add_development_dependency('fission')
+  spec.add_development_dependency('pry')
+  spec.add_development_dependency('rubocop') if RUBY_VERSION > "1.9"
 end

@@ -1,55 +1,112 @@
-# Copyright (c) Microsoft Open Technologies, Inc.  All rights reserved.
-#
-# The MIT License (MIT)
-#
-# Permission is hereby granted, free of charge, to any person obtaining a copy
-# of this software and associated documentation files (the "Software"), to deal
-# in the Software without restriction, including without limitation the rights
-# to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-# copies of the Software, and to permit persons to whom the Software is
-# furnished to do so, subject to the following conditions:
-#
-# The above copyright notice and this permission notice shall be included in
-# all copies or substantial portions of the Software.
-#
-# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-# OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE.
+require 'bundler/setup'
 require "bundler/gem_tasks"
-require 'rubocop/rake_task'
 require 'rake/testtask'
+require 'date'
+require 'rubygems'
+require 'rubygems/package_task'
+require 'yard'
+require File.dirname(__FILE__) + '/lib/fog/hadoop'
 
-RuboCop::RakeTask.new
+#############################################################################
+#
+# Helper functions
+#
+#############################################################################
 
-task :default => :test
-
-desc 'Run fog-hadoop unit tests with Minitest'
-task :test do
-  mock = ENV['FOG_MOCK'] || 'true'
-  sh("export FOG_MOCK=#{mock} && bundle exec rake tests:unit")
+def name
+  @name ||= Dir['*.gemspec'].first.split('.').first
 end
 
-desc 'Run fog-hadoop spec/ tests (VCR)'
-task :spec => "tests:spec"
+def version
+  Fog::VERSION
+end
 
-namespace :tests do
-  desc "Run fog-hadoop test/"
-  Rake::TestTask.new do |t|
-    t.name = 'unit'
-    t.libs.push [ "lib", "test" ]
-    t.test_files = FileList['test/**/*.rb']
-    t.verbose = true
+def date
+  Date.today.to_s
+end
+
+def rubyforge_project
+  name
+end
+
+def gemspec_file
+  "#{name}.gemspec"
+end
+
+def gem_file
+  "#{name}-#{version}.gem"
+end
+
+def replace_header(head, header_name)
+  head.sub!(/(\.#{header_name}\s*= ').*'/) { "#{$1}#{send(header_name)}'"}
+end
+
+#############################################################################
+#
+# Standard tasks
+#
+#############################################################################
+
+GEM_NAME = "#{name}"
+task :default => :test
+task :travis  => ['test', 'test:travis']
+
+Rake::TestTask.new do |t|
+  t.pattern = File.join("spec", "**", "*_spec.rb")
+end
+
+namespace :test do
+  mock = ENV['FOG_MOCK'] || 'true'
+  task :travis do
+    sh("export FOG_MOCK=#{mock} && bundle exec shindont")
   end
+  task :vsphere do
+    sh("export FOG_MOCK=#{mock} && bundle exec shindont tests/vsphere")
+  end
+  task :openvz do
+    sh("export FOG_MOCK=#{mock} && bundle exec shindont tests/openvz")
+  end
+end
 
-  desc "Run fog-hadoop spec/"
-  Rake::TestTask.new do |t|
-    t.name = 'spec'
-    t.libs.push [ "lib", "spec" ]
-    t.pattern = 'spec/**/*_spec.rb'
-    t.verbose = true
+desc 'Run mocked tests for a specific provider'
+task :mock, :provider do |t, args|
+  if args.to_a.size != 1
+    fail 'USAGE: rake mock[<provider>]'
+  end
+  provider = args[:provider]
+  sh("export FOG_MOCK=true && bundle exec shindont tests/#{provider}")
+end
+
+desc 'Run live tests against a specific provider'
+task :live, :provider do |t, args|
+  if args.to_a.size != 1
+    fail 'USAGE: rake live[<provider>]'
+  end
+  provider = args[:provider]
+  sh("export FOG_MOCK=false PROVIDER=#{provider} && bundle exec shindont tests/#{provider}")
+end
+
+task :nuke do
+  Fog.providers.each do |provider|
+    next if ['Vmfusion'].include?(provider)
+    begin
+      compute = Fog::Compute.new(:provider => provider)
+      for server in compute.servers
+        Fog::Formatador.display_line("[#{provider}] destroying server #{server.identity}")
+        server.destroy rescue nil
+      end
+    rescue
+    end
+    begin
+      dns = Fog::DNS.new(:provider => provider)
+      for zone in dns.zones
+        for record in zone.records
+          record.destroy rescue nil
+        end
+        Fog::Formatador.display_line("[#{provider}] destroying zone #{zone.identity}")
+        zone.destroy rescue nil
+      end
+    rescue
+    end
   end
 end
