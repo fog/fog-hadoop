@@ -17,10 +17,8 @@ module Fog
 
     service(:compute, 'Compute')
 
-
-
-    def self.build_yarn_endpoint
-      "/ws/v1/cluster/"
+    def self.yarn_endpoint
+      "/ws/v1/cluster"
     end
   end
 end
