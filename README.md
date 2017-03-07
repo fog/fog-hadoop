@@ -3,22 +3,46 @@
 
 Fog connector for Hadoop
 
+## Installation
+
+Add this line to your application's Gemfile:
+
+```ruby
+gem 'fog-hadoop'
+```
+
+And then execute:
+
+    $ bundle
+
+Or install it yourself as:
+
+    $ gem install fog-hadoop
+## Usage
+
+### Initial Setup
+
+Require the gem:
+
+```ruby
+require "fog/hadoop"
+```
+
+
+Connection parameters:
+
+```ruby
+@connection_params = {
+  hadoop_compute_api_url:     "http://<resource_manager_host>:8088/"
+}
+```
+    
+* Use [Yarn](docs/yarn.md)    
+
+# Contribute
+Read the [contribute](docs/CONTRIBUTING.md) documentation
 
 # Development
 
-Use https://github.com/vangj/vagrant-hadoop-2.4.1-spark-1.0.1 to have a Hadoop Environment
+You can use this [Vagrant Hadoop](https://github.com/vangj/vagrant-hadoop-2.4.1-spark-1.0.1) repo to have a environment to dev.
 
-Run console
-
-```bin/console```
-
-
-Define options
-``
-@options = {hadoop_compute_api_url:"http://10.211.55.102:8088/"}
-
-compute = Fog::Compute::Hadoop.new(@options)
-compute.get_metrics
-```
-
-```=> {"appsSubmit`ted"=>0, "appsCompleted"=>0, "appsPending"=>0, "appsRunning"=>0, "appsFailed"=>0, "appsKilled"=>0, "reservedMB"=>0, "availableMB"=>16384, "allocatedMB"=>0, "containersAllocated"=>0, "containersReserved"=>0, "containersPending"=>0, "totalMB"=>16384, "totalNodes"=>2, "lostNodes"=>0, "unhealthyNodes"=>0, "decommissionedNodes"=>0, "rebootedNodes"=>0, "activeNodes"=>2}```
