@@ -8,6 +8,8 @@ module Fog
 
       request_path 'fog/hadoop/requests/compute'
       request      :get_info
+      request      :get_app_stats
+      request      :get_app_stats_detail
       request      :get_metrics
       request      :get_node
       request      :list_nodes

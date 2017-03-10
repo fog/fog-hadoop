@@ -1,6 +1,7 @@
 # fog-hadoop
-[![Build Status](https://travis-ci.org/aljesusg/fog-hadoop.svg?branch=master)](https://travis-ci.org/aljesusg/fog-hadoop)[![Code Climate](https://lima.codeclimate.com/github/aljesusg/fog-hadoop/badges/gpa.svg)](https://lima.codeclimate.com/github/aljesusg/fog-hadoop)[![Test Coverage](https://lima.codeclimate.com/github/aljesusg/fog-hadoop/badges/coverage.svg)](https://lima.codeclimate.com/github/aljesusg/fog-hadoop/coverage)[![Issue Count](https://lima.codeclimate.com/github/aljesusg/fog-hadoop/badges/issue_count.svg)](https://lima.codeclimate.com/github/aljesusg/fog-hadoop)
-Fog connector for Hadoop
+[![Build Status](https://travis-ci.org/aljesusg/fog-hadoop.svg?branch=master)](https://travis-ci.org/aljesusg/fog-hadoop) [![Code Climate](https://lima.codeclimate.com/github/aljesusg/fog-hadoop/badges/gpa.svg)](https://lima.codeclimate.com/github/aljesusg/fog-hadoop) [![Test Coverage](https://lima.codeclimate.com/github/aljesusg/fog-hadoop/badges/coverage.svg)](https://lima.codeclimate.com/github/aljesusg/fog-hadoop/coverage)
+
+## Fog connector for Hadoop
 
 ## Installation
 
