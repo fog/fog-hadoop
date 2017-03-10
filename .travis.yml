@@ -5,3 +5,4 @@ rvm:
 script:
 - bundle install
 - bundle exec rake travis
+after_script: bundle exec codeclimate-test-reporter
