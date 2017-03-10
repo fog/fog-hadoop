@@ -1,4 +1,3 @@
-
 Shindo.tests('Fog::Compute[:hadoop] | metrics request', ['hadoop', 'compute']) do
 
     @metrics_format = {

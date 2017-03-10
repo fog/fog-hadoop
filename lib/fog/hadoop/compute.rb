@@ -8,6 +8,8 @@ module Fog
 
       request_path 'fog/hadoop/requests/compute'
       request      :get_metrics
+      request      :get_node
+      request      :list_nodes
 
       class Real
         include Fog::Hadoop::Utils::Request
@@ -15,13 +17,14 @@ module Fog
         def initialize(options = {})
 
           @compute_api_url = options[:hadoop_compute_api_url] || 'https://localhost:8088/'
-
+          Fog.credentials[:@compute_api_url]        = options[:hadoop_compute_api_url]
           @connection = Fog::Core::Connection.new(@compute_api_url)
         end
       end
 
       class Mock
         def initialize(options = {})
+          @compute_api_url = options[:hadoop_compute_api_url] || 'https://localhost:8088/'
         end
       end
     end #SakuraCloud
