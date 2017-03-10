@@ -14,5 +14,6 @@
 | Service          | GET           |Notes                                |
 |------------------|---------------|-------------------------------------|
 | Yarn             | Info          |/ws/v1/cluster/info                  |
+|                  | AppStats      |/ws/v1/cluster/appstatistics         |
 |                  | Metrics       |/ws/v1/cluster/metrics               |
 |                  | Nodes         |/ws/v1/cluster/nodes                 |
