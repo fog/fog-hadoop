@@ -8,3 +8,11 @@
 | Hdfs             | Volume        | v1             | TBD        |       |
 
 
+
+## YARN
+
+| Service          | GET           |Notes                                |
+|------------------|---------------|-------------------------------------|
+| Yarn             | Info          |/ws/v1/cluster/info                  |
+|                  | Metrics       |/ws/v1/cluster/metrics               |
+|                  | Nodes         |/ws/v1/cluster/nodes                 |
