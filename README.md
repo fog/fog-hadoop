@@ -1,5 +1,5 @@
 # fog-hadoop
-[![Build Status](https://travis-ci.org/aljesusg/fog-hadoop.svg?branch=master)](https://travis-ci.org/aljesusg/fog-hadoop) [![Code Climate](https://lima.codeclimate.com/github/aljesusg/fog-hadoop/badges/gpa.svg)](https://lima.codeclimate.com/github/aljesusg/fog-hadoop) [![Test Coverage](https://lima.codeclimate.com/github/aljesusg/fog-hadoop/badges/coverage.svg)](https://lima.codeclimate.com/github/aljesusg/fog-hadoop/coverage)
+[![Build Status](https://travis-ci.org/fog/fog-hadoop.svg?branch=master)](https://travis-ci.org/fog/fog-hadoop) [![Code Climate](https://lima.codeclimate.com/github/fog/fog-hadoop/badges/gpa.svg)](https://lima.codeclimate.com/github/fog/fog-hadoop) [![Test Coverage](https://lima.codeclimate.com/github/fog/fog-hadoop/badges/coverage.svg)](https://lima.codeclimate.com/github/fog/fog-hadoop/coverage)
 
 ## Fog connector for Hadoop
 
@@ -36,7 +36,7 @@ Connection parameters:
   hadoop_compute_api_url:     "http://<resource_manager_host>:8088/"
 }
 ```
-    
+
 * Use [Yarn](docs/yarn.md)    
 
 # Support
@@ -49,4 +49,3 @@ Read the [contribute](docs/CONTRIBUTING.md) documentation
 # Development
 
 You can use this [Vagrant Hadoop](https://github.com/vangj/vagrant-hadoop-2.4.1-spark-1.0.1) repo to have a environment to dev.
-
