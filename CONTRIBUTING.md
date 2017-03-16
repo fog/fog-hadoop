@@ -2,28 +2,28 @@
 
 New contributors are always welcome, when it doubt please ask questions. We strive to be an open and welcoming community. Please be nice to one another.
 
-For structure information of fog click [here](https://github.com/aljesusg/fog-hadoop/blob/master/lib/fog/hadoop/docs/structure.md)
+For structure information of fog click [here](https://github.com/fog/fog-hadoop/blob/master/lib/fog/hadoop/docs/structure.md)
 
 ### Coding
 
 * Pick a task:
-  * Offer feedback on open [pull requests](https://github.com/aljesusg/fog-hadoop/pulls).
-  * Review open [issues](https://github.com/aljesusg/fog-hadoop/issues) for things to help on.
-  * [Create an issue](https://github.com/aljesusg/fog-hadoop/issues/new) to start a discussion on additions or features.
+  * Offer feedback on open [pull requests](https://github.com/fog/fog-hadoop/pulls).
+  * Review open [issues](https://github.com/fog/fog-hadoop/issues) for things to help on.
+  * [Create an issue](https://github.com/fog/fog-hadoop/issues/new) to start a discussion on additions or features.
 * Fork the project, add your changes and tests to cover them in a topic branch.
-  * [Fork](https://github.com/aljesusg/fog-hadoop/fork)
+  * [Fork](https://github.com/fog/fog-hadoop/fork)
   * Create your feature branch (`git checkout -b my-new-feature`)
   * Commit your changes (`git commit -am 'Add some feature'`)
   * Push to the branch (`git push origin my-new-feature`)
   * Create a new pull request
 * Commit your changes and rebase against `fog/fog-azure-rm` to ensure everything is up to date.
-* [Submit a pull request](https://github.com/fog/fog-azure-rm/compare/).
+* [Submit a pull request](https://github.com/fog/fog-hadoop/compare/).
 
 ### Non-Coding
 
-* Offer feedback on open [issues](https://github.com/aljesusg/fog-hadoop/issues).
+* Offer feedback on open [issues](https://github.com/fog/fog-hadoop/issues).
 * Organize or volunteer at events.
-* Write and help edit [documentation](https://github.com/aljesusg/fog-hadoop/tree/master/lib/fog/aljesusg/docs).
+* Write and help edit [documentation](https://github.com/fog/fog-hadoop/tree/master/lib/fog/aljesusg/docs).
 
 ## Testing
 You can run `Minitest` tests by running this command in the root directory.
