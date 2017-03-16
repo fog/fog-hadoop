@@ -32,7 +32,7 @@ Gem::Specification.new do |spec|
   spec.summary       = %q{Module for the 'fog' gem to support Hadoop services.}
   spec.description   = %q{This library can be used as a module for `fog` or as standalone provider
                         to use the Hadoop services in applications..}
-  spec.homepage      = "http://github.com/aljesusg/fog-hadoop"
+  spec.homepage      = "http://github.com/fog/fog-hadoop"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0")
