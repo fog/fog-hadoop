@@ -1,5 +1,5 @@
 # fog-hadoop
-[![Build Status](https://travis-ci.org/fog/fog-hadoop.svg?branch=master)](https://travis-ci.org/fog/fog-hadoop) [![Code Climate](https://lima.codeclimate.com/github/fog/fog-hadoop/badges/gpa.svg)](https://lima.codeclimate.com/github/fog/fog-hadoop) [![Test Coverage](https://lima.codeclimate.com/github/fog/fog-hadoop/badges/coverage.svg)](https://lima.codeclimate.com/github/fog/fog-hadoop/coverage)
+[![Gem Version](https://badge.fury.io/rb/fog-hadoop.svg)](https://badge.fury.io/rb/fog-hadoop)[![Build Status](https://travis-ci.org/fog/fog-hadoop.svg?branch=master)](https://travis-ci.org/fog/fog-hadoop) [![Code Climate](https://lima.codeclimate.com/github/fog/fog-hadoop/badges/gpa.svg)](https://lima.codeclimate.com/github/fog/fog-hadoop) [![Test Coverage](https://lima.codeclimate.com/github/fog/fog-hadoop/badges/coverage.svg)](https://lima.codeclimate.com/github/fog/fog-hadoop/coverage)
 
 ## Fog connector for Hadoop
 
@@ -44,7 +44,7 @@ Connection parameters:
 Check in this [link](supported.md)
 
 # Contribute
-Read the [contribute](docs/CONTRIBUTING.md) documentation
+Read the [contribute](CONTRIBUTING.md) documentation
 
 # Development
 
