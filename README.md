@@ -1,5 +1,5 @@
 # fog-hadoop
-[![Gem Version](https://badge.fury.io/rb/fog-hadoop.svg)](https://badge.fury.io/rb/fog-hadoop)[![Build Status](https://travis-ci.org/fog/fog-hadoop.svg?branch=master)](https://travis-ci.org/fog/fog-hadoop) [![Code Climate](https://lima.codeclimate.com/github/fog/fog-hadoop/badges/gpa.svg)](https://lima.codeclimate.com/github/fog/fog-hadoop) [![Test Coverage](https://lima.codeclimate.com/github/fog/fog-hadoop/badges/coverage.svg)](https://lima.codeclimate.com/github/fog/fog-hadoop/coverage)
+[![Gem Version](https://badge.fury.io/rb/fog-hadoop.svg)](https://badge.fury.io/rb/fog-hadoop)[![Build Status](https://travis-ci.org/fog/fog-hadoop.svg?branch=master)](https://travis-ci.org/fog/fog-hadoop) [![Code Climate](https://lima.codeclimate.com/github/fog/fog-hadoop/badges/gpa.svg)](https://lima.codeclimate.com/github/fog/fog-hadoop) [![Coverage Status](https://coveralls.io/repos/fog/fog-hadoop/badge.svg?branch=master&service=github)](https://coveralls.io/github/fog/fog-hadoop?branch=master)
 
 ## Fog connector for Hadoop
 
@@ -33,12 +33,14 @@ Connection parameters:
 
 ```ruby
 @connection_params = {
-  hadoop_compute_api_url:     "http://<resource_manager_host>:8088/"
+  hadoop_compute_api_url:     "http://<resource_manager_host>:8088/",
+  hadoop_storage_api_url:     "http://<namenode>:50070/"
 }
 ```
 
 * Use [Yarn](docs/yarn.md)    
-
+* Use [HDFS](docs/hdfs.md)
+ 
 # Support
 
 Check in this [link](supported.md)

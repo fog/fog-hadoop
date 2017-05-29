@@ -51,6 +51,7 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency('rbvmomi')
   spec.add_development_dependency('yard')
   spec.add_development_dependency('thor')
+  spec.add_development_dependency('coveralls')
   spec.add_development_dependency('rbovirt', '0.0.24')
   spec.add_development_dependency('shindo', '~> 0.3.4')
   spec.add_development_dependency('fission')
