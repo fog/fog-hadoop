@@ -7,18 +7,22 @@ module Fog
     autoload :Hadoop, File.expand_path('../hadoop/compute', __FILE__)
   end
 
+  module Storage
+    autoload :Hadoop, File.expand_path('../hadoop/storage', __FILE__)
+  end
+
   module Hadoop
     extend Fog::Provider
 
-
-    # Miscs
-    ## Startup Script
-    #autoload :Script,      File.expand_path('../sakuracloud/script', __FILE__)
-
     service(:compute, 'Compute')
+    service(:storage, 'Storage')
 
     def self.yarn_endpoint
       "/ws/v1/cluster"
+    end
+
+    def self.hdfs_endpoint
+      "/jmx"
     end
   end
 end

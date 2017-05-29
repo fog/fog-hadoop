@@ -17,3 +17,10 @@
 |                  | AppStats      |/ws/v1/cluster/appstatistics         |
 |                  | Metrics       |/ws/v1/cluster/metrics               |
 |                  | Nodes         |/ws/v1/cluster/nodes                 |
+
+## HDFS
+
+| Service          | GET           |Notes                                                                 |
+|------------------|---------------|----------------------------------------------------------------------|
+| HDFS             | Metrics       |/jmx?qry=Hadoop:service=NameNode,name=FSNamesystemState               |
+
