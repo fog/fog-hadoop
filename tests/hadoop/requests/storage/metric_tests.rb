@@ -1,4 +1,4 @@
-Shindo.tests('Fog::STORAGE[:hadoop] | metrics request', ['hadoop', 'STORAGE']) do
+Shindo.tests('Fog::Storage[:hadoop] | metrics request', ['hadoop', 'STORAGE']) do
 
   @metrics_format = [{
       "name" => String,
