@@ -2,6 +2,8 @@
 ENV['FOG_RC'] = ENV['FOG_RC'] || File.expand_path('../.fog', __FILE__)
 
 ## From fog-core
+require 'minitest/autorun'
+require "minitest/spec"
 require 'fog/test_helpers'
 require 'fog/hadoop'
 require "simplecov"
