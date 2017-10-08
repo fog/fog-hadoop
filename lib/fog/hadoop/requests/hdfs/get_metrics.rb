@@ -1,6 +1,6 @@
 module Fog
-  module Storage
-    class Hadoop
+  module Hadoop
+    class HDFS
       class Real
         def get_metrics
           request(

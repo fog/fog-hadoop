@@ -2,15 +2,15 @@
 
 ```ruby
 @connection_params = {
-  hadoop_compute_api_url:     "http://<resource_manager_host>:8088/"
+  hadoop_yarn_api_url:     "http://<resource_manager_host>:8088/"
 }
 ```
 
 ## Get Metrics
 
 ```
-compute = Fog::Compute::Hadoop.new(@connection_params)
-compute.get_metrics
+yarn = Fog::Hadoop::YARN.new(@connection_params)
+yarn.get_metrics
 ```
 
 ```
@@ -39,8 +39,7 @@ compute.get_metrics
 ## Get Info
 
 ```
-compute = Fog::Compute::Hadoop.new(@connection_params)
-compute.get_info
+yarn.get_info
 ```
 
 ```
@@ -59,8 +58,7 @@ compute.get_info
 ## Get Stats
 
 ```
-compute = Fog::Compute::Hadoop.new(@connection_params)
-compute.get_app_stats
+yarn.get_app_stats
 ```
 
 ```

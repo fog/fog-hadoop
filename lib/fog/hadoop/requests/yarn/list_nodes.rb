@@ -1,6 +1,6 @@
 module Fog
-  module Compute
-    class Hadoop
+  module Hadoop
+    class YARN
       class Real
         def list_nodes
           request(

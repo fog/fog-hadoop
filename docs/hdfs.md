@@ -2,15 +2,15 @@
 
 ```ruby
 @connection_params = {
-  hadoop_storage_api_url:     "http://<namenode>:50070/"
+  hadoop_hdfs_api_url:     "http://<namenode>:50070/"
 }
 ```
 
 ## Get Metrics
 
 ```
-storage = Fog::Storage::Hadoop.new(@connection_params)
-storage.get_metrics
+hdfs = Fog::Hadoop::HDFS.new(@connection_params)
+hdfs.get_metrics
 ```
 
 ```

@@ -1,4 +1,4 @@
-Shindo.tests('Fog::Storage[:hadoop] | metrics request', ['hadoop', 'STORAGE']) do
+Shindo.tests('Fog::Hadoop::HDFS[:hadoop] | metrics request', ['hadoop', 'HDFS']) do
 
   @metrics_format = [{
       "name" => String,
@@ -26,7 +26,7 @@ Shindo.tests('Fog::Storage[:hadoop] | metrics request', ['hadoop', 'STORAGE']) d
 
   tests('success') do
     tests('#get_metrics') do
-      metrics = hadoop_storage_service.get_metrics
+      metrics = hadoop_hdfs_service.get_metrics
       test 'returns a Hash' do
         metrics.body.is_a? Array
       end

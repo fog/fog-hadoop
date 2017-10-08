@@ -1,4 +1,4 @@
-Shindo.tests('Fog::Compute[:hadoop] | app stats request', ['hadoop', 'compute']) do
+Shindo.tests('Fog::Hadoop::YARN[:hadoop] | app stats request', ['hadoop', 'yarn']) do
 
     @app_stats_format = {
         "state" => String,
@@ -8,7 +8,7 @@ Shindo.tests('Fog::Compute[:hadoop] | app stats request', ['hadoop', 'compute'])
 
   tests('success') do
     tests('#get_app_stats') do
-      stats = hadoop_compute_service.get_app_stats
+      stats = hadoop_yarn_service.get_app_stats
       test 'returns a Hash' do
         stats.body.is_a? Array
       end
@@ -26,7 +26,7 @@ Shindo.tests('Fog::Compute[:hadoop] | app stats request', ['hadoop', 'compute'])
     end
 
     tests('#get_app_stats_detail') do
-      stats_detail = hadoop_compute_service.get_app_stats_detail(:states => "accepted")
+      stats_detail = hadoop_yarn_service.get_app_stats_detail(:states => "accepted")
       test 'returns a Hash' do
         stats_detail.body.is_a? Array
       end

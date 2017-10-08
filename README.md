@@ -33,8 +33,8 @@ Connection parameters:
 
 ```ruby
 @connection_params = {
-  hadoop_compute_api_url:     "http://<resource_manager_host>:8088/",
-  hadoop_storage_api_url:     "http://<namenode>:50070/"
+  hadoop_yarn_api_url:     "http://<resource_manager_host>:8088/",
+  hadoop_hdfs_api_url:     "http://<namenode>:50070/"
 }
 ```
 
