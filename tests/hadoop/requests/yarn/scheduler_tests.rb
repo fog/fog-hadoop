@@ -1,4 +1,4 @@
-Shindo.tests('Fog::Compute[:hadoop] | scheduler request', ['hadoop', 'compute']) do
+Shindo.tests('Fog::Hadoop::YARN[:hadoop] | scheduler request', ['hadoop', 'yarn']) do
 
     @scheduler_format =   {
         "schedulerInfo" => {
@@ -202,7 +202,7 @@ Shindo.tests('Fog::Compute[:hadoop] | scheduler request', ['hadoop', 'compute'])
 
   tests('success') do
     tests('#get_metrics') do
-      schedulers = hadoop_compute_service.get_scheduler
+      schedulers = hadoop_yarn_service.get_scheduler
       test 'returns a Hash' do
         schedulers.body.is_a? Hash
       end

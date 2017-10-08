@@ -1,4 +1,4 @@
-Shindo.tests('Fog::Compute[:hadoop] | info request', ['hadoop', 'compute']) do
+Shindo.tests('Fog::Hadoop::YARN[:hadoop] | info request', ['hadoop', 'yarn']) do
 
     @info_format = {
         "id"                            => Integer,
@@ -14,7 +14,7 @@ Shindo.tests('Fog::Compute[:hadoop] | info request', ['hadoop', 'compute']) do
 
   tests('success') do
     tests('#get_info') do
-      info = hadoop_compute_service.get_info
+      info = hadoop_yarn_service.get_info
       test 'returns a Hash' do
         info.body.is_a? Hash
       end

@@ -17,16 +17,16 @@ end
 
 if Fog.mock?
   Fog.credentials = {
-    hadoop_compute_api_url: 'http://localhost:8088',
-    hadoop_storage_api_url: 'http://localhost:50070'
+    hadoop_yarn_api_url: 'http://localhost:8088',
+    hadoop_hdfs_api_url: 'http://localhost:50070'
   }.merge(Fog.credentials)
 end
 
-def hadoop_compute_service
-  Fog::Compute[:hadoop]
+def hadoop_yarn_service
+  Fog::Hadoop[:yarn]
 end
 
-def hadoop_storage_service
-  Fog::Storage[:hadoop]
+def hadoop_hdfs_service
+  Fog::Hadoop[:hdfs]
 end
 

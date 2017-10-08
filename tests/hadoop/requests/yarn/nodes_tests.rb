@@ -1,5 +1,5 @@
 
-Shindo.tests('Fog::Compute[:hadoop] | nodes request', %w(hadoop compute)) do
+Shindo.tests('Fog::Hadoop::YARN[:hadoop] | nodes request', %w(hadoop yarn)) do
 
   @node_format = {
         'rack'                  => String,
@@ -18,7 +18,7 @@ Shindo.tests('Fog::Compute[:hadoop] | nodes request', %w(hadoop compute)) do
   }
 
   tests('#list_nodes') do
-    list_nodes = hadoop_compute_service.list_nodes
+    list_nodes = hadoop_yarn_service.list_nodes
     test 'returns a Hash' do
       list_nodes.body.is_a? Array
     end
@@ -36,7 +36,7 @@ Shindo.tests('Fog::Compute[:hadoop] | nodes request', %w(hadoop compute)) do
   end
 
   tests('#get_nodes') do
-    get_node = hadoop_compute_service.get_node('sample')
+    get_node = hadoop_yarn_service.get_node('sample')
     test 'returns a Hash' do
       get_node.body.is_a? Hash
     end
