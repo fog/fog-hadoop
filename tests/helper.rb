@@ -9,6 +9,8 @@ require 'fog/hadoop'
 require "simplecov"
 require 'coveralls'
 
+require File.expand_path './api_stub', __dir__
+
 SimpleCov.start
 Coveralls.wear!
 if ENV['FOG_MOCK'] == 'true'
