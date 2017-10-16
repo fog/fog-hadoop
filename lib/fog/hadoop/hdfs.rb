@@ -8,6 +8,12 @@ module Fog
 
       request_path 'fog/hadoop/requests/hdfs'
       request      :get_metrics
+      request :list_namenodes
+
+
+      model_path 'fog/hadoop/models/hdfs'
+      model :namenode
+      collection :namenodes
 
       class Real
         include Fog::Hadoop::Utils::Request
@@ -25,6 +31,6 @@ module Fog
           @storage_api_url = options[:hadoop_hdfs_api_url] || 'https://localhost:50070/'
         end
       end
-    end #SakuraCloud
-  end #Compute
+    end
+  end 
 end
