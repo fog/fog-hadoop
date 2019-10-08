@@ -1,11 +1,12 @@
 require 'fog/core'
 require 'fog/json'
-require 'fog/hadoop/utils/request'
 
 module Fog
   module Hadoop
-    autoload :YARN, File.expand_path('../hadoop/yarn', __FILE__)
     autoload :HDFS, File.expand_path('../hadoop/hdfs', __FILE__)
+    autoload :YARN, File.expand_path('../hadoop/yarn', __FILE__)
+    autoload :Utils, File.expand_path('../hadoop/utils', __FILE__)
+
     extend Fog::Provider
 
     service(:yarn, 'YARN')
